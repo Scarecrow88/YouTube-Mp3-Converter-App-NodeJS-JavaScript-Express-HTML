@@ -1,0 +1,26 @@
+{
+  "name": "youtube-mp3-converter-app-nodejs-javascript-express-html",
+  "version": "0.0.1",
+  "description": "Convertidor de YouTube a mp3",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "server",
+    "API",
+    "key",
+    "environment"
+  ],
+  "author": "JohnDoe",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.7"
+  }
+}

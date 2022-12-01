@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube MP3 Converter App</title>
+    <link rel="stylesheet" href="/css/navResponsiveContent.css">
+    <link rel="stylesheet" href="/css/formContent.css">
+</head>
+<body>
+    <header class="navheader">
+        <nav class="navbox">
+            <a href="#" class="navlogo" aria-label="openmenu">
+                YouTube MP3 Converter App
+                <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 576 512">
+                    <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+                </svg>
+            </a>
+            <button class="navtoggle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </button>
+            <ul class="navmenu">
+                <li class="navmenuitem">
+                    <a href="#">Perfil</a>
+                </li>
+                <li class="navmenuitem">
+                    <a href="#">Crear inventario</a>
+                </li>
+                <li class="navmenuitem">
+                    <a href="#">Contacto</a>
+                </li>
+                <li class="navmenuitem">
+                    <a href="#">Ajustes</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="databox">
+            <form action="/convert" method="POST">
+                <h2>Enter video URL</h2>
+                <div>
+                    <input class="textfield" name="videoID" autocomplete="off" type="text" placeholder="Enter URL">
+                </div>
+                <div>
+                    <button class="formbutton" type="submit">Submit</button>
+                </div>
+            </form>
+            <div>
+                <% if (typeof success != "undefined" && success) { %>
+                    <div class="success">
+                        <p><%= song_title %></p>
+                        <a href="<%= song_link %>">Download</a>
+                    </div>
+                <% } else if (typeof success != "undefined" && !success) { %>
+                    <div class="errors">
+                        <p><%= message %></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    <script src="/js/barMenu.js"></script>
+    <script src="/js/closePopUp.js"></script>
+    <script src="/js/scrollTrans.js"></script>
+</body>
+</html>
